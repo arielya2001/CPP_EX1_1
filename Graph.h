@@ -11,7 +11,7 @@ namespace graph {
     class Graph {
     private:
         int numVertices;
-        Neighbor** adjacencyList; // שינוי כאן: שמירת שכנים עם משקל
+        Neighbor** adjacencyList;
         int* listSizes;
 
     public:
