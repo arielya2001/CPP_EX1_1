@@ -3,10 +3,15 @@
 
 namespace graph {
 
+    struct Neighbor {
+        int id;
+        int weight;
+    };
+
     class Graph {
     private:
         int numVertices;
-        int** adjacencyList;
+        Neighbor** adjacencyList; // שינוי כאן: שמירת שכנים עם משקל
         int* listSizes;
 
     public:
