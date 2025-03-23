@@ -1,0 +1,13 @@
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+
+all: Main
+
+Main: main.cpp Graph.o
+	$(CXX) $(CXXFLAGS) -o Main main.cpp Graph.o
+
+Graph.o: Graph.cpp Graph.h
+	$(CXX) $(CXXFLAGS) -c Graph.cpp
+
+clean:
+	rm -f *.o Main

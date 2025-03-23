@@ -21,6 +21,9 @@ namespace graph {
         void addEdge(int src, int dst, int weight = 1);
         void removeEdge(int src, int dst);
         void print_graph() const;
+        int getNumVertices() const;
+        Neighbor* getNeighbors(int vertex) const;
+        int getNeighborCount(int vertex) const;
 
     private: //פונקציות פנימיות - רלוונטיות לכל פונקציות חיצונית
         void addToList(int vertex, int neighbor, int weight);

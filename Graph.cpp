@@ -79,5 +79,17 @@ bool Graph::edgeExists(int vertex, int neighbor) const {
             return true;
     return false;
 }
+    int Graph::getNumVertices() const {
+    return numVertices;
+}
+
+    Neighbor* Graph::getNeighbors(int vertex) const {
+    return adjacencyList[vertex];
+}
+
+    int Graph::getNeighborCount(int vertex) const {
+    return listSizes[vertex];
+}
+
 
 }
