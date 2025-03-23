@@ -90,6 +90,10 @@ bool Graph::edgeExists(int vertex, int neighbor) const {
     int Graph::getNeighborCount(int vertex) const {
     return listSizes[vertex];
 }
+    void Graph::addDirectedEdge(int src, int dst, int weight) {
+    addToList(src, dst, weight);
+}
+
 
 
 }

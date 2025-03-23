@@ -24,6 +24,7 @@ namespace graph {
         int getNumVertices() const;
         Neighbor* getNeighbors(int vertex) const;
         int getNeighborCount(int vertex) const;
+        void addDirectedEdge(int src, int dst, int weight = 1);
 
     private: //פונקציות פנימיות - רלוונטיות לכל פונקציות חיצונית
         void addToList(int vertex, int neighbor, int weight);
