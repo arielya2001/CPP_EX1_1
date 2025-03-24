@@ -23,7 +23,7 @@ namespace graph {
                 int v = neighbors[i].id;
                 if (!visited[v]) {
                     visited[v] = true;
-                    bfsTree.addDirectedEdge(u, v, neighbors[i].weight); // עץ BFS: צלע חד-כיוונית
+                    bfsTree.addDirectedEdge(u, v, neighbors[i].weight);
                     q.enqueue(v);
                 }
             }

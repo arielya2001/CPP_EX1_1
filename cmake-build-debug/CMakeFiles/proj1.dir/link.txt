@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/proj1.dir/link.d CMakeFiles/proj1.dir/Algorithms.cpp.o CMakeFiles/proj1.dir/Graph.cpp.o CMakeFiles/proj1.dir/main.cpp.o CMakeFiles/proj1.dir/tests.cpp.o CMakeFiles/proj1.dir/Queue.cpp.o -o proj1

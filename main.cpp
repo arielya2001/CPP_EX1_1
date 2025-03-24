@@ -15,7 +15,7 @@ int main() {
     std::cout << "Original graph:\n";
     g.print_graph();
 
-    Graph tree = Algorithms::dfs(g, 0);
+    Graph tree = Algorithms::bfs(g, 0);
     std::cout << "\nDFS result (tree or forest):\n";
     tree.print_graph();
 
