@@ -4,32 +4,64 @@
 
 namespace graph {
 
-//בנאי הגרף - מקצה מקום לזיכרון עבור רשימת שכנים ומערך גודל לכל קודקוד
-Graph::Graph(int numVertices){
+Graph::Graph(int numVertices) {
     this->numVertices = numVertices;
-    adjacencyList = new Neighbor*[numVertices]; // שינוי כאן
-    listSizes = new int[numVertices];
+    adjacencyList = new Neighbor*[numVertices];
     for (int i = 0; i < numVertices; ++i) {
         adjacencyList[i] = nullptr;
-        listSizes[i] = 0;
     }
 }
 
-//דסטרקטור - משחרר את כל הזיכרון שהוקצה
 Graph::~Graph() {
-    for (int i = 0; i < numVertices; ++i)
-        delete[] adjacencyList[i];
+    for (int i = 0; i < numVertices; ++i) {
+        Neighbor* current = adjacencyList[i];
+        while (current != nullptr) {
+            Neighbor* temp = current;
+            current = current->next;
+            delete temp;
+        }
+    }
     delete[] adjacencyList;
-    delete[] listSizes;
 }
 
-//פונקציה להוספת קשת בין שני קודקודים (דו-כיוונית)
+void Graph::addToList(int vertex, int neighbor, int weight) {
+    Neighbor* newNeighbor = new Neighbor{neighbor, weight, adjacencyList[vertex]};
+    adjacencyList[vertex] = newNeighbor;
+}
+
+void Graph::removeFromList(int vertex, int neighbor) {
+    Neighbor* current = adjacencyList[vertex];
+    Neighbor* prev = nullptr;
+
+    while (current != nullptr) {
+        if (current->id == neighbor) {
+            if (prev == nullptr)
+                adjacencyList[vertex] = current->next;
+            else
+                prev->next = current->next;
+            delete current;
+            return;
+        }
+        prev = current;
+        current = current->next;
+    }
+}
+
+bool Graph::edgeExists(int vertex, int neighbor) const {
+    Neighbor* current = adjacencyList[vertex];
+    while (current != nullptr) {
+        if (current->id == neighbor)
+            return true;
+        current = current->next;
+    }
+    return false;
+}
+
 void Graph::addEdge(int src, int dst, int weight) {
     addToList(src, dst, weight);
     addToList(dst, src, weight); // כי הגרף לא מכוון
 }
 
-//פונקציה להסרת קשת בין שני קודקודים
 void Graph::removeEdge(int src, int dst) {
     if (!edgeExists(src, dst))
         throw std::runtime_error("Edge does not exist.");
@@ -37,63 +69,38 @@ void Graph::removeEdge(int src, int dst) {
     removeFromList(dst, src);
 }
 
-//פונקציה להדפסת מבנה הגרף (לצורך בדיקה)
 void Graph::print_graph() const {
     for (int i = 0; i < numVertices; ++i) {
         std::cout << "Vertex " << i << ": ";
-        for (int j = 0; j < listSizes[i]; ++j)
-            std::cout << "(" << adjacencyList[i][j].id << ", w=" << adjacencyList[i][j].weight << ") ";
+        Neighbor* current = adjacencyList[i];
+        while (current != nullptr) {
+            std::cout << "(" << current->id << ", w=" << current->weight << ") ";
+            current = current->next;
+        }
         std::cout << std::endl;
     }
 }
 
-//inner methods - מעכשיו
-void Graph::addToList(int vertex, int neighbor, int weight) {
-    Neighbor* newList = new Neighbor[listSizes[vertex] + 1]; //מקצים עוד מקום בשביל ה neighbor
-    for (int i = 0; i < listSizes[vertex]; ++i)
-        newList[i] = adjacencyList[vertex][i];  //מעתיקים את השכנים הקיימים כבר למערך החדש
-    newList[listSizes[vertex]].id = neighbor; //מוסיפים את neigbor - קודקוד נוסף - יעד
-    newList[listSizes[vertex]].weight = weight; //מוסיפים את המשקל של הקשת
-    delete[] adjacencyList[vertex]; //אין צורך במידע של הישן יותר
-    adjacencyList[vertex] = newList; // מעדכנים את הישן במידע של החדש
-    listSizes[vertex]++; //מעדכנים את מס' השכנים של הקודקוד
-}
-
-void Graph::removeFromList(int vertex, int neighbor) {
-    int index = -1;
-    for (int i = 0; i < listSizes[vertex]; ++i) {
-        if (adjacencyList[vertex][i].id == neighbor) { // משווים לפי מזהה קודקוד
-            index = i;
-            break;
-        }
-    }
-    if (index == -1) return;
-    for (int i = index; i < listSizes[vertex] - 1; ++i)
-        adjacencyList[vertex][i] = adjacencyList[vertex][i + 1]; // מזיזים את השכנים אחורה
-    listSizes[vertex]--;
-}
-
-bool Graph::edgeExists(int vertex, int neighbor) const {
-    for (int i = 0; i < listSizes[vertex]; ++i)
-        if (adjacencyList[vertex][i].id == neighbor)
-            return true;
-    return false;
-}
-    int Graph::getNumVertices() const {
+int Graph::getNumVertices() const {
     return numVertices;
 }
 
-    Neighbor* Graph::getNeighbors(int vertex) const {
+Neighbor* Graph::getNeighbors(int vertex) const {
     return adjacencyList[vertex];
 }
 
-    int Graph::getNeighborCount(int vertex) const {
-    return listSizes[vertex];
+int Graph::getNeighborCount(int vertex) const {
+    int count = 0;
+    Neighbor* current = adjacencyList[vertex];
+    while (current != nullptr) {
+        count++;
+        current = current->next;
+    }
+    return count;
 }
-    void Graph::addDirectedEdge(int src, int dst, int weight) {
+
+void Graph::addDirectedEdge(int src, int dst, int weight) {
     addToList(src, dst, weight);
 }
 
-
-
-}
+} // namespace graph

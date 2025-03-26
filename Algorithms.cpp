@@ -16,16 +16,15 @@ namespace graph {
         while (!q.isEmpty()) {
             int u = q.dequeue();
 
-            Neighbor* neighbors = g.getNeighbors(u);
-            int neighborCount = g.getNeighborCount(u);
-
-            for (int i = 0; i < neighborCount; ++i) {
-                int v = neighbors[i].id;
+            Neighbor* current = g.getNeighbors(u);
+            while (current != nullptr) {
+                int v = current->id;
                 if (!visited[v]) {
                     visited[v] = true;
-                    bfsTree.addDirectedEdge(u, v, neighbors[i].weight);
+                    bfsTree.addDirectedEdge(u, v, current->weight);
                     q.enqueue(v);
                 }
+                current = current->next;
             }
         }
 
@@ -33,41 +32,38 @@ namespace graph {
         return bfsTree;
     }
 
-    // פונקציה עזר רקורסיבית - מבקרת את הצומת u ואת שכניו
+    // DFS - פונקציית עזר רקורסיבית
     void dfs_visit(const Graph& g, Graph& dfsTree, bool* visited, int u) {
-        visited[u] = true; // סמן את הקודקוד כבוקר
+        visited[u] = true;
 
-        Neighbor* neighbors = g.getNeighbors(u); // קבל את רשימת השכנים של u
-        int neighborCount = g.getNeighborCount(u); // קבל את מספר השכנים של u
-
-        for (int i = neighborCount - 1; i >= 0; --i) {
-            int v = neighbors[i].id;
+        Neighbor* current = g.getNeighbors(u);
+        while (current != nullptr) {
+            int v = current->id;
             if (!visited[v]) {
-                dfsTree.addDirectedEdge(u, v, neighbors[i].weight);
+                dfsTree.addDirectedEdge(u, v, current->weight);
                 dfs_visit(g, dfsTree, visited, v);
             }
+            current = current->next;
         }
-
     }
 
-    // פונקציית DFS ראשית
+    // DFS - פונקציה ראשית
     Graph Algorithms::dfs(const Graph& g, int source) {
-        int n = g.getNumVertices(); // מספר הקודקודים בגרף
-        Graph dfsTree(n); // צור עץ DFS ריק
-        bool* visited = new bool[n](); // מערך לביקורי קודקודים (מאותחל ל-false)
+        int n = g.getNumVertices();
+        Graph dfsTree(n);
+        bool* visited = new bool[n]();
 
-        // בצע DFS מהקודקוד ההתחלתי
         dfs_visit(g, dfsTree, visited, source);
 
-        // עבור על כל הקודקודים כדי לטפל ברכיבים לא מחוברים
+        // המשך לרכיבים לא קשורים
         for (int u = 0; u < n; ++u) {
-            if (!visited[u]) { // אם הקודקוד לא בוקר
-                dfs_visit(g, dfsTree, visited, u); // בצע DFS מהקודקוד
+            if (!visited[u]) {
+                dfs_visit(g, dfsTree, visited, u);
             }
         }
 
-        delete[] visited; // שחרר את הזיכרון של מערך הביקורים
-        return dfsTree; // החזר את עץ ה-DFS
+        delete[] visited;
+        return dfsTree;
     }
 
 }
