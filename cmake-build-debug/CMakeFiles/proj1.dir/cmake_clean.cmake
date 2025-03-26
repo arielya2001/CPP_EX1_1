@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d"
   "CMakeFiles/proj1.dir/Queue.cpp.o"
   "CMakeFiles/proj1.dir/Queue.cpp.o.d"
+  "CMakeFiles/proj1.dir/UnionFind.cpp.o"
+  "CMakeFiles/proj1.dir/UnionFind.cpp.o.d"
   "CMakeFiles/proj1.dir/main.cpp.o"
   "CMakeFiles/proj1.dir/main.cpp.o.d"
   "CMakeFiles/proj1.dir/tests.cpp.o"

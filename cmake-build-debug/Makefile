@@ -232,6 +232,30 @@ Queue.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Queue.cpp.s
 .PHONY : Queue.cpp.s
 
+UnionFind.o: UnionFind.cpp.o
+.PHONY : UnionFind.o
+
+# target to build an object file
+UnionFind.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/UnionFind.cpp.o
+.PHONY : UnionFind.cpp.o
+
+UnionFind.i: UnionFind.cpp.i
+.PHONY : UnionFind.i
+
+# target to preprocess a source file
+UnionFind.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/UnionFind.cpp.i
+.PHONY : UnionFind.cpp.i
+
+UnionFind.s: UnionFind.cpp.s
+.PHONY : UnionFind.s
+
+# target to generate assembly for a file
+UnionFind.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/UnionFind.cpp.s
+.PHONY : UnionFind.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -302,6 +326,9 @@ help:
 	@echo "... Queue.o"
 	@echo "... Queue.i"
 	@echo "... Queue.s"
+	@echo "... UnionFind.o"
+	@echo "... UnionFind.i"
+	@echo "... UnionFind.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

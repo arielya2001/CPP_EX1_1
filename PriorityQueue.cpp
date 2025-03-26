@@ -6,21 +6,19 @@ namespace graph {
 
     PriorityQueue::PriorityQueue(int capacity)
         : capacity(capacity), size(0) {
-        elements = new int[capacity];
-        priorities = new int[capacity];
+        data = new Element[capacity];
     }
 
     PriorityQueue::~PriorityQueue() {
-        delete[] elements;
-        delete[] priorities;
+        delete[] data;
     }
 
-    void PriorityQueue::insert(int element, int priority) {
+    void PriorityQueue::insert(int vertex, int priority) {
         if (size == capacity)
             throw std::runtime_error("PriorityQueue overflow");
 
-        elements[size] = element;
-        priorities[size] = priority;
+        data[size].vertex = vertex;
+        data[size].priority = priority;
         size++;
     }
 
@@ -30,25 +28,21 @@ namespace graph {
 
         int minIndex = 0;
         for (int i = 1; i < size; ++i) {
-            if (priorities[i] < priorities[minIndex]) {
+            if (data[i].priority < data[minIndex].priority) {
                 minIndex = i;
             }
         }
 
-        int minElement = elements[minIndex];
-
-        // הזזת האלמנט האחרון למקום שהתפנה
-        elements[minIndex] = elements[size - 1];
-        priorities[minIndex] = priorities[size - 1];
+        int minVertex = data[minIndex].vertex;
+        data[minIndex] = data[size - 1]; // Move last to minIndex
         size--;
-
-        return minElement;
+        return minVertex;
     }
 
-    void PriorityQueue::decreaseKey(int element, int newPriority) {
+    void PriorityQueue::decreaseKey(int vertex, int newPriority) {
         for (int i = 0; i < size; ++i) {
-            if (elements[i] == element && priorities[i] > newPriority) {
-                priorities[i] = newPriority;
+            if (data[i].vertex == vertex && data[i].priority > newPriority) {
+                data[i].priority = newPriority;
                 return;
             }
         }
@@ -58,9 +52,9 @@ namespace graph {
         return size == 0;
     }
 
-    bool PriorityQueue::contains(int element) const {
+    bool PriorityQueue::contains(int vertex) const {
         for (int i = 0; i < size; ++i) {
-            if (elements[i] == element)
+            if (data[i].vertex == vertex)
                 return true;
         }
         return false;

@@ -3,10 +3,14 @@
 
 namespace graph {
 
+    struct Element {
+        int vertex;
+        int priority;
+    };
+
     class PriorityQueue {
     private:
-        int* elements;    // מערך של מזהי קודקודים
-        int* priorities;  // מערך של ערכי עדיפות (מרחקים)
+        Element* data;
         int capacity;
         int size;
 
@@ -14,11 +18,11 @@ namespace graph {
         PriorityQueue(int capacity);
         ~PriorityQueue();
 
-        void insert(int element, int priority);
+        void insert(int vertex, int priority);
         int extractMin();
-        void decreaseKey(int element, int newPriority);
+        void decreaseKey(int vertex, int newPriority);
         bool isEmpty() const;
-        bool contains(int element) const;
+        bool contains(int vertex) const;
     };
 
 }
