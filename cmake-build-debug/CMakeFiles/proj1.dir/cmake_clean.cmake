@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/proj1.dir/Algorithms.cpp.o.d"
   "CMakeFiles/proj1.dir/Graph.cpp.o"
   "CMakeFiles/proj1.dir/Graph.cpp.o.d"
+  "CMakeFiles/proj1.dir/PriorityQueue.cpp.o"
+  "CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d"
   "CMakeFiles/proj1.dir/Queue.cpp.o"
   "CMakeFiles/proj1.dir/Queue.cpp.o.d"
   "CMakeFiles/proj1.dir/main.cpp.o"

@@ -5,24 +5,21 @@
 using namespace graph;
 
 int main() {
-    // גרף של משולש (3 קודקודים מחוברים ביניהם)
+    // יצירת גרף עם 3 קודקודים
     Graph g(3);
-    g.addEdge(0, 1);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
+
+    // הוספת קשתות עם משקלים
+    g.addEdge(0, 1, 2);
+    g.addEdge(0, 2, 3);
+    g.addEdge(1, 2, 1);
 
     std::cout << "Original graph:\n";
     g.print_graph();
 
-    // BFS
-    Graph bfsTree = Algorithms::bfs(g, 0);
-    std::cout << "\nBFS tree from node 0:\n";
-    bfsTree.print_graph();
+    Graph mst = Algorithms::prim(g);
 
-    // DFS
-    Graph dfsTree = Algorithms::dfs(g, 0);
-    std::cout << "\nDFS tree (or forest) from node 0:\n";
-    dfsTree.print_graph();
+    std::cout << "\nMinimum Spanning Tree (Prim):\n";
+    mst.print_graph();
 
     return 0;
 }

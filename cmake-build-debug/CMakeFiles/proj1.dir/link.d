@@ -7,6 +7,7 @@ proj1: \
   CMakeFiles/proj1.dir/main.cpp.o \
   CMakeFiles/proj1.dir/tests.cpp.o \
   CMakeFiles/proj1.dir/Queue.cpp.o \
+  CMakeFiles/proj1.dir/PriorityQueue.cpp.o \
   /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
@@ -51,6 +52,8 @@ CMakeFiles/proj1.dir/main.cpp.o:
 CMakeFiles/proj1.dir/tests.cpp.o:
 
 CMakeFiles/proj1.dir/Queue.cpp.o:
+
+CMakeFiles/proj1.dir/PriorityQueue.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so:
 

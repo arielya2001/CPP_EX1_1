@@ -184,6 +184,30 @@ Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
+PriorityQueue.o: PriorityQueue.cpp.o
+.PHONY : PriorityQueue.o
+
+# target to build an object file
+PriorityQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/PriorityQueue.cpp.o
+.PHONY : PriorityQueue.cpp.o
+
+PriorityQueue.i: PriorityQueue.cpp.i
+.PHONY : PriorityQueue.i
+
+# target to preprocess a source file
+PriorityQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/PriorityQueue.cpp.i
+.PHONY : PriorityQueue.cpp.i
+
+PriorityQueue.s: PriorityQueue.cpp.s
+.PHONY : PriorityQueue.s
+
+# target to generate assembly for a file
+PriorityQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/PriorityQueue.cpp.s
+.PHONY : PriorityQueue.cpp.s
+
 Queue.o: Queue.cpp.o
 .PHONY : Queue.o
 
@@ -272,6 +296,9 @@ help:
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... PriorityQueue.o"
+	@echo "... PriorityQueue.i"
+	@echo "... PriorityQueue.s"
 	@echo "... Queue.o"
 	@echo "... Queue.i"
 	@echo "... Queue.s"

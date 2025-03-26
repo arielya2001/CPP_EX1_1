@@ -1,6 +1,7 @@
 #include "Algorithms.h"
 #include "Queue.h"
-
+#include "PriorityQueue.h"
+#include <limits>
 namespace graph {
 
     // === BFS ===
@@ -65,5 +66,111 @@ namespace graph {
         delete[] visited;
         return dfsTree;
     }
+    Graph Algorithms::dijkstra(const Graph& g, int source) {
+        int n = g.getNumVertices();
+        Graph shortestPaths(n);
+
+        const int INF = std::numeric_limits<int>::max(); //אינסוף
+        int* distance = new int[n];
+        int* parent = new int[n];
+
+        for (int i = 0; i < n; ++i) { //אתחול כל ההורים ל1 והמרחקים לאינסוף
+            distance[i] = INF;
+            parent[i] = -1;
+        }
+        distance[source] = 0;
+
+        PriorityQueue pq(n); //הכנסת כולם לתור
+        for (int i = 0; i < n; ++i) {
+            pq.insert(i, distance[i]); // הכנס את כל הקודקודים מראש
+        }
+
+        while (!pq.isEmpty()) {
+            int u = pq.extractMin();
+
+            Neighbor* current = g.getNeighbors(u);
+            while (current != nullptr) {
+                int v = current->id;
+                int w = current->weight;
+
+                if (distance[u] != INF && distance[u] + w < distance[v]) { //RELAX
+                    distance[v] = distance[u] + w;
+                    parent[v] = u;
+                    pq.decreaseKey(v, distance[v]);
+                }
+
+                current = current->next;
+            }
+        }
+
+        for (int v = 0; v < n; ++v) {
+            if (parent[v] != -1) {
+                int u = parent[v];
+                int w = distance[v] - distance[u];
+                shortestPaths.addDirectedEdge(u, v, w);
+            }
+        }
+
+        delete[] distance;
+        delete[] parent;
+        return shortestPaths;
+    }
+
+    Graph Algorithms::prim(const Graph& g) {
+        int n = g.getNumVertices();
+        Graph mst(n);
+
+        const int INF = std::numeric_limits<int>::max();
+        int* key = new int[n];
+        int* parent = new int[n];
+        bool* inMST = new bool[n]();
+
+        for (int i = 0; i < n; ++i) {
+            key[i] = INF;
+            parent[i] = -1;
+        }
+        key[0] = 0;
+
+        PriorityQueue pq(n);
+        for (int i = 0; i < n; ++i) {
+            pq.insert(i, key[i]);
+        }
+
+        while (!pq.isEmpty()) {
+            int u = pq.extractMin();
+            inMST[u] = true; // הוספה לעץ
+
+            Neighbor* current = g.getNeighbors(u);
+            while (current != nullptr) {
+                int v = current->id;
+                int w = current->weight;
+                //קודם מעדכנים את הקשת הכי זולה שיכולה להכניס את v לעץ
+                //אח"כ שליפה של הקודקוד הבא לפי הקשת הזולה ביותר מבין האופציות!
+                if (!inMST[v] && w < key[v]) { //לא בעץ ומצאנו דרך זולה יותר
+                    parent[v] = u;
+                    key[v] = w;
+                    pq.decreaseKey(v, w);
+                }
+
+                current = current->next;
+            }
+        }
+
+        // בניית העץ הפורש המינימלי
+        for (int v = 0; v < n; ++v) {
+            if (parent[v] != -1) {
+                int u = parent[v];
+                int w = key[v];
+                mst.addEdge(u, v, w);
+            }
+        }
+
+        delete[] key;
+        delete[] parent;
+        delete[] inMST;
+        return mst;
+    }
+
+
 
 }

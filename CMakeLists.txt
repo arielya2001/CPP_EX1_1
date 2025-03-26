@@ -14,4 +14,6 @@ add_executable(proj1
         main.cpp
         tests.cpp
         Queue.cpp
-        Queue.h)
+        Queue.h
+        PriorityQueue.cpp
+        PriorityQueue.h)

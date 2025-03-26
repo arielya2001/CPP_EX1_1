@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ariely122/CPP_EX1_1/Algorithms.cpp" "CMakeFiles/proj1.dir/Algorithms.cpp.o" "gcc" "CMakeFiles/proj1.dir/Algorithms.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/Graph.cpp" "CMakeFiles/proj1.dir/Graph.cpp.o" "gcc" "CMakeFiles/proj1.dir/Graph.cpp.o.d"
+  "/home/ariely122/CPP_EX1_1/PriorityQueue.cpp" "CMakeFiles/proj1.dir/PriorityQueue.cpp.o" "gcc" "CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/Queue.cpp" "CMakeFiles/proj1.dir/Queue.cpp.o" "gcc" "CMakeFiles/proj1.dir/Queue.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/main.cpp" "CMakeFiles/proj1.dir/main.cpp.o" "gcc" "CMakeFiles/proj1.dir/main.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/tests.cpp" "CMakeFiles/proj1.dir/tests.cpp.o" "gcc" "CMakeFiles/proj1.dir/tests.cpp.o.d"
