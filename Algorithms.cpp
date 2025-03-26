@@ -1,6 +1,8 @@
 #include "Algorithms.h"
 #include "Queue.h"
 #include "PriorityQueue.h"
+#include "UnionFind.h"
+#include "EdgePriorityQueue.h"
 #include <limits>
 namespace graph {
 
@@ -168,6 +170,51 @@ namespace graph {
         delete[] key;
         delete[] parent;
         delete[] inMST;
+        return mst;
+    }
+    Graph Algorithms::kruskal(const Graph& g) {
+        int n = g.getNumVertices();
+        Graph mst(n);
+
+        // 1. בניית תור עדיפויות לכל הקשתות
+        int maxEdges = 0;
+        for (int u = 0; u < n; ++u) {
+            Neighbor* current = g.getNeighbors(u);
+            while (current != nullptr) {
+                if (u < current->id) maxEdges++; // בלי כפילויות
+                current = current->next;
+            }
+        }
+
+        EdgePriorityQueue pq(maxEdges);
+        for (int u = 0; u < n; ++u) {
+            Neighbor* current = g.getNeighbors(u);
+            while (current != nullptr) {
+                int v = current->id;
+                int w = current->weight;
+                if (u < v) {
+                    pq.insert({u, v, w});
+                }
+                current = current->next;
+            }
+        }
+
+        // 2. Union-Find
+        UnionFind uf(n);
+
+        // 3. שליפה לפי סדר עולה של משקלים
+        while (!pq.isEmpty()) {
+            Edge e = pq.extractMin();
+            int u = e.u;
+            int v = e.v;
+            int w = e.weight;
+
+            if (uf.find(u) != uf.find(v)) {
+                mst.addEdge(u, v, w);
+                uf.unionSets(u, v);
+            }
+        }
+
         return mst;
     }
 

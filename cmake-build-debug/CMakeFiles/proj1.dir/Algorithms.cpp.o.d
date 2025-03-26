@@ -2,7 +2,9 @@ CMakeFiles/proj1.dir/Algorithms.cpp.o: \
  /home/ariely122/CPP_EX1_1/Algorithms.cpp /usr/include/stdc-predef.h \
  /home/ariely122/CPP_EX1_1/Algorithms.h /home/ariely122/CPP_EX1_1/Graph.h \
  /home/ariely122/CPP_EX1_1/Queue.h \
- /home/ariely122/CPP_EX1_1/PriorityQueue.h /usr/include/c++/13/limits \
+ /home/ariely122/CPP_EX1_1/PriorityQueue.h \
+ /home/ariely122/CPP_EX1_1/UnionFind.h \
+ /home/ariely122/CPP_EX1_1/EdgePriorityQueue.h /usr/include/c++/13/limits \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

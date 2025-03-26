@@ -5,20 +5,20 @@
 using namespace graph;
 
 int main() {
-    // יצירת גרף עם 3 קודקודים
     Graph g(3);
 
-    // הוספת קשתות עם משקלים
-    g.addEdge(0, 1, 2);
-    g.addEdge(0, 2, 3);
-    g.addEdge(1, 2, 1);
+    // הוספת קשתות
+    g.addEdge(0, 1, 1);
+    g.addEdge(1, 2, 3);
+    g.addEdge(0, 2, 4);
 
     std::cout << "Original graph:\n";
     g.print_graph();
 
-    Graph mst = Algorithms::prim(g);
+    // הרצת קרוסקל
+    Graph mst = Algorithms::kruskal(g);
 
-    std::cout << "\nMinimum Spanning Tree (Prim):\n";
+    std::cout << "\nMinimum Spanning Tree (Kruskal):\n";
     mst.print_graph();
 
     return 0;

@@ -18,4 +18,6 @@ add_executable(proj1
         PriorityQueue.cpp
         PriorityQueue.h
         UnionFind.cpp
-        UnionFind.h)
+        UnionFind.h
+        EdgePriorityQueue.cpp
+        EdgePriorityQueue.h)

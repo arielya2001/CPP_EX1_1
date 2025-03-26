@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ariely122/CPP_EX1_1/Algorithms.cpp" "CMakeFiles/proj1.dir/Algorithms.cpp.o" "gcc" "CMakeFiles/proj1.dir/Algorithms.cpp.o.d"
+  "/home/ariely122/CPP_EX1_1/EdgePriorityQueue.cpp" "CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o" "gcc" "CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/Graph.cpp" "CMakeFiles/proj1.dir/Graph.cpp.o" "gcc" "CMakeFiles/proj1.dir/Graph.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/PriorityQueue.cpp" "CMakeFiles/proj1.dir/PriorityQueue.cpp.o" "gcc" "CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d"
   "/home/ariely122/CPP_EX1_1/Queue.cpp" "CMakeFiles/proj1.dir/Queue.cpp.o" "gcc" "CMakeFiles/proj1.dir/Queue.cpp.o.d"

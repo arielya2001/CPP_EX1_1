@@ -160,6 +160,30 @@ Algorithms.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Algorithms.cpp.s
 .PHONY : Algorithms.cpp.s
 
+EdgePriorityQueue.o: EdgePriorityQueue.cpp.o
+.PHONY : EdgePriorityQueue.o
+
+# target to build an object file
+EdgePriorityQueue.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o
+.PHONY : EdgePriorityQueue.cpp.o
+
+EdgePriorityQueue.i: EdgePriorityQueue.cpp.i
+.PHONY : EdgePriorityQueue.i
+
+# target to preprocess a source file
+EdgePriorityQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.i
+.PHONY : EdgePriorityQueue.cpp.i
+
+EdgePriorityQueue.s: EdgePriorityQueue.cpp.s
+.PHONY : EdgePriorityQueue.s
+
+# target to generate assembly for a file
+EdgePriorityQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.s
+.PHONY : EdgePriorityQueue.cpp.s
+
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
 
@@ -317,6 +341,9 @@ help:
 	@echo "... Algorithms.o"
 	@echo "... Algorithms.i"
 	@echo "... Algorithms.s"
+	@echo "... EdgePriorityQueue.o"
+	@echo "... EdgePriorityQueue.i"
+	@echo "... EdgePriorityQueue.s"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
