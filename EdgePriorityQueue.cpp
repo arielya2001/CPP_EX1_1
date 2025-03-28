@@ -1,4 +1,3 @@
-// EdgePriorityQueue.cpp
 #include "EdgePriorityQueue.h"
 #include <stdexcept>
 
@@ -6,6 +5,8 @@ namespace graph {
 
     EdgePriorityQueue::EdgePriorityQueue(int capacity)
         : capacity(capacity), size(0) {
+        if (capacity <= 0)
+            throw std::invalid_argument("EdgePriorityQueue capacity must be positive.");
         data = new EdgeElement[capacity];
     }
 
@@ -34,7 +35,7 @@ namespace graph {
         }
 
         Edge minEdge = data[minIndex].edge;
-        data[minIndex] = data[size - 1];
+        data[minIndex] = data[size - 1]; // Swap with last
         size--;
         return minEdge;
     }

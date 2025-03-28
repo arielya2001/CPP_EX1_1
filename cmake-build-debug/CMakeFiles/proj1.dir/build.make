@@ -53,10 +53,10 @@ RM = /home/ariely122/.cache/JetBrains/RemoteDev/dist/8883b3744bbaf_CLion-251.237
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ariely122/CPP_EX1_1
+CMAKE_SOURCE_DIR = /home/ariely122/CLionProjects/CPP_EX1_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ariely122/CPP_EX1_1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/proj1.dir/depend.make
@@ -73,143 +73,159 @@ CMakeFiles/proj1.dir/codegen:
 .PHONY : CMakeFiles/proj1.dir/codegen
 
 CMakeFiles/proj1.dir/Algorithms.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/Algorithms.cpp.o: /home/ariely122/CPP_EX1_1/Algorithms.cpp
+CMakeFiles/proj1.dir/Algorithms.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/Algorithms.cpp
 CMakeFiles/proj1.dir/Algorithms.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proj1.dir/Algorithms.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Algorithms.cpp.o -MF CMakeFiles/proj1.dir/Algorithms.cpp.o.d -o CMakeFiles/proj1.dir/Algorithms.cpp.o -c /home/ariely122/CPP_EX1_1/Algorithms.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/proj1.dir/Algorithms.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Algorithms.cpp.o -MF CMakeFiles/proj1.dir/Algorithms.cpp.o.d -o CMakeFiles/proj1.dir/Algorithms.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/Algorithms.cpp
 
 CMakeFiles/proj1.dir/Algorithms.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/Algorithms.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/Algorithms.cpp > CMakeFiles/proj1.dir/Algorithms.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/Algorithms.cpp > CMakeFiles/proj1.dir/Algorithms.cpp.i
 
 CMakeFiles/proj1.dir/Algorithms.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/Algorithms.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/Algorithms.cpp -o CMakeFiles/proj1.dir/Algorithms.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/Algorithms.cpp -o CMakeFiles/proj1.dir/Algorithms.cpp.s
 
 CMakeFiles/proj1.dir/Graph.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/Graph.cpp.o: /home/ariely122/CPP_EX1_1/Graph.cpp
+CMakeFiles/proj1.dir/Graph.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/Graph.cpp
 CMakeFiles/proj1.dir/Graph.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proj1.dir/Graph.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Graph.cpp.o -MF CMakeFiles/proj1.dir/Graph.cpp.o.d -o CMakeFiles/proj1.dir/Graph.cpp.o -c /home/ariely122/CPP_EX1_1/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/proj1.dir/Graph.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Graph.cpp.o -MF CMakeFiles/proj1.dir/Graph.cpp.o.d -o CMakeFiles/proj1.dir/Graph.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/Graph.cpp
 
 CMakeFiles/proj1.dir/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/Graph.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/Graph.cpp > CMakeFiles/proj1.dir/Graph.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/Graph.cpp > CMakeFiles/proj1.dir/Graph.cpp.i
 
 CMakeFiles/proj1.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/Graph.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/Graph.cpp -o CMakeFiles/proj1.dir/Graph.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/Graph.cpp -o CMakeFiles/proj1.dir/Graph.cpp.s
 
-CMakeFiles/proj1.dir/main.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/main.cpp.o: /home/ariely122/CPP_EX1_1/main.cpp
-CMakeFiles/proj1.dir/main.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proj1.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/main.cpp.o -MF CMakeFiles/proj1.dir/main.cpp.o.d -o CMakeFiles/proj1.dir/main.cpp.o -c /home/ariely122/CPP_EX1_1/main.cpp
+CMakeFiles/proj1.dir/Main.cpp.o: CMakeFiles/proj1.dir/flags.make
+CMakeFiles/proj1.dir/Main.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/Main.cpp
+CMakeFiles/proj1.dir/Main.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/proj1.dir/Main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Main.cpp.o -MF CMakeFiles/proj1.dir/Main.cpp.o.d -o CMakeFiles/proj1.dir/Main.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/Main.cpp
 
-CMakeFiles/proj1.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/main.cpp > CMakeFiles/proj1.dir/main.cpp.i
+CMakeFiles/proj1.dir/Main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/Main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/Main.cpp > CMakeFiles/proj1.dir/Main.cpp.i
 
-CMakeFiles/proj1.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/main.cpp -o CMakeFiles/proj1.dir/main.cpp.s
+CMakeFiles/proj1.dir/Main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/Main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/Main.cpp -o CMakeFiles/proj1.dir/Main.cpp.s
 
 CMakeFiles/proj1.dir/tests.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/tests.cpp.o: /home/ariely122/CPP_EX1_1/tests.cpp
+CMakeFiles/proj1.dir/tests.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/tests.cpp
 CMakeFiles/proj1.dir/tests.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proj1.dir/tests.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/tests.cpp.o -MF CMakeFiles/proj1.dir/tests.cpp.o.d -o CMakeFiles/proj1.dir/tests.cpp.o -c /home/ariely122/CPP_EX1_1/tests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/proj1.dir/tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/tests.cpp.o -MF CMakeFiles/proj1.dir/tests.cpp.o.d -o CMakeFiles/proj1.dir/tests.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/tests.cpp
 
 CMakeFiles/proj1.dir/tests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/tests.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/tests.cpp > CMakeFiles/proj1.dir/tests.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/tests.cpp > CMakeFiles/proj1.dir/tests.cpp.i
 
 CMakeFiles/proj1.dir/tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/tests.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/tests.cpp -o CMakeFiles/proj1.dir/tests.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/tests.cpp -o CMakeFiles/proj1.dir/tests.cpp.s
 
 CMakeFiles/proj1.dir/Queue.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/Queue.cpp.o: /home/ariely122/CPP_EX1_1/Queue.cpp
+CMakeFiles/proj1.dir/Queue.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/Queue.cpp
 CMakeFiles/proj1.dir/Queue.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/proj1.dir/Queue.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Queue.cpp.o -MF CMakeFiles/proj1.dir/Queue.cpp.o.d -o CMakeFiles/proj1.dir/Queue.cpp.o -c /home/ariely122/CPP_EX1_1/Queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/proj1.dir/Queue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/Queue.cpp.o -MF CMakeFiles/proj1.dir/Queue.cpp.o.d -o CMakeFiles/proj1.dir/Queue.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/Queue.cpp
 
 CMakeFiles/proj1.dir/Queue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/Queue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/Queue.cpp > CMakeFiles/proj1.dir/Queue.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/Queue.cpp > CMakeFiles/proj1.dir/Queue.cpp.i
 
 CMakeFiles/proj1.dir/Queue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/Queue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/Queue.cpp -o CMakeFiles/proj1.dir/Queue.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/Queue.cpp -o CMakeFiles/proj1.dir/Queue.cpp.s
 
 CMakeFiles/proj1.dir/PriorityQueue.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/PriorityQueue.cpp.o: /home/ariely122/CPP_EX1_1/PriorityQueue.cpp
+CMakeFiles/proj1.dir/PriorityQueue.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/PriorityQueue.cpp
 CMakeFiles/proj1.dir/PriorityQueue.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/proj1.dir/PriorityQueue.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/PriorityQueue.cpp.o -MF CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d -o CMakeFiles/proj1.dir/PriorityQueue.cpp.o -c /home/ariely122/CPP_EX1_1/PriorityQueue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/proj1.dir/PriorityQueue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/PriorityQueue.cpp.o -MF CMakeFiles/proj1.dir/PriorityQueue.cpp.o.d -o CMakeFiles/proj1.dir/PriorityQueue.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/PriorityQueue.cpp
 
 CMakeFiles/proj1.dir/PriorityQueue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/PriorityQueue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/PriorityQueue.cpp > CMakeFiles/proj1.dir/PriorityQueue.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/PriorityQueue.cpp > CMakeFiles/proj1.dir/PriorityQueue.cpp.i
 
 CMakeFiles/proj1.dir/PriorityQueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/PriorityQueue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/PriorityQueue.cpp -o CMakeFiles/proj1.dir/PriorityQueue.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/PriorityQueue.cpp -o CMakeFiles/proj1.dir/PriorityQueue.cpp.s
 
 CMakeFiles/proj1.dir/UnionFind.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/UnionFind.cpp.o: /home/ariely122/CPP_EX1_1/UnionFind.cpp
+CMakeFiles/proj1.dir/UnionFind.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.cpp
 CMakeFiles/proj1.dir/UnionFind.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/proj1.dir/UnionFind.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/UnionFind.cpp.o -MF CMakeFiles/proj1.dir/UnionFind.cpp.o.d -o CMakeFiles/proj1.dir/UnionFind.cpp.o -c /home/ariely122/CPP_EX1_1/UnionFind.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/proj1.dir/UnionFind.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/UnionFind.cpp.o -MF CMakeFiles/proj1.dir/UnionFind.cpp.o.d -o CMakeFiles/proj1.dir/UnionFind.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.cpp
 
 CMakeFiles/proj1.dir/UnionFind.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/UnionFind.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/UnionFind.cpp > CMakeFiles/proj1.dir/UnionFind.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.cpp > CMakeFiles/proj1.dir/UnionFind.cpp.i
 
 CMakeFiles/proj1.dir/UnionFind.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/UnionFind.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/UnionFind.cpp -o CMakeFiles/proj1.dir/UnionFind.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.cpp -o CMakeFiles/proj1.dir/UnionFind.cpp.s
 
 CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o: CMakeFiles/proj1.dir/flags.make
-CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o: /home/ariely122/CPP_EX1_1/EdgePriorityQueue.cpp
+CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.cpp
 CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o -MF CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o.d -o CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o -c /home/ariely122/CPP_EX1_1/EdgePriorityQueue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o -MF CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o.d -o CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.cpp
 
 CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CPP_EX1_1/EdgePriorityQueue.cpp > CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.cpp > CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.i
 
 CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CPP_EX1_1/EdgePriorityQueue.cpp -o CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.cpp -o CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.s
+
+CMakeFiles/proj1.dir/test.cpp.o: CMakeFiles/proj1.dir/flags.make
+CMakeFiles/proj1.dir/test.cpp.o: /home/ariely122/CLionProjects/CPP_EX1_1/test.cpp
+CMakeFiles/proj1.dir/test.cpp.o: CMakeFiles/proj1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/proj1.dir/test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/proj1.dir/test.cpp.o -MF CMakeFiles/proj1.dir/test.cpp.o.d -o CMakeFiles/proj1.dir/test.cpp.o -c /home/ariely122/CLionProjects/CPP_EX1_1/test.cpp
+
+CMakeFiles/proj1.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/proj1.dir/test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ariely122/CLionProjects/CPP_EX1_1/test.cpp > CMakeFiles/proj1.dir/test.cpp.i
+
+CMakeFiles/proj1.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/proj1.dir/test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ariely122/CLionProjects/CPP_EX1_1/test.cpp -o CMakeFiles/proj1.dir/test.cpp.s
 
 # Object files for target proj1
 proj1_OBJECTS = \
 "CMakeFiles/proj1.dir/Algorithms.cpp.o" \
 "CMakeFiles/proj1.dir/Graph.cpp.o" \
-"CMakeFiles/proj1.dir/main.cpp.o" \
+"CMakeFiles/proj1.dir/Main.cpp.o" \
 "CMakeFiles/proj1.dir/tests.cpp.o" \
 "CMakeFiles/proj1.dir/Queue.cpp.o" \
 "CMakeFiles/proj1.dir/PriorityQueue.cpp.o" \
 "CMakeFiles/proj1.dir/UnionFind.cpp.o" \
-"CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o"
+"CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o" \
+"CMakeFiles/proj1.dir/test.cpp.o"
 
 # External object files for target proj1
 proj1_EXTERNAL_OBJECTS =
 
 proj1: CMakeFiles/proj1.dir/Algorithms.cpp.o
 proj1: CMakeFiles/proj1.dir/Graph.cpp.o
-proj1: CMakeFiles/proj1.dir/main.cpp.o
+proj1: CMakeFiles/proj1.dir/Main.cpp.o
 proj1: CMakeFiles/proj1.dir/tests.cpp.o
 proj1: CMakeFiles/proj1.dir/Queue.cpp.o
 proj1: CMakeFiles/proj1.dir/PriorityQueue.cpp.o
 proj1: CMakeFiles/proj1.dir/UnionFind.cpp.o
 proj1: CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o
+proj1: CMakeFiles/proj1.dir/test.cpp.o
 proj1: CMakeFiles/proj1.dir/build.make
 proj1: CMakeFiles/proj1.dir/compiler_depend.ts
 proj1: CMakeFiles/proj1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable proj1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable proj1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/proj1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -221,6 +237,6 @@ CMakeFiles/proj1.dir/clean:
 .PHONY : CMakeFiles/proj1.dir/clean
 
 CMakeFiles/proj1.dir/depend:
-	cd /home/ariely122/CPP_EX1_1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ariely122/CPP_EX1_1 /home/ariely122/CPP_EX1_1 /home/ariely122/CPP_EX1_1/cmake-build-debug /home/ariely122/CPP_EX1_1/cmake-build-debug /home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles/proj1.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ariely122/CLionProjects/CPP_EX1_1 /home/ariely122/CLionProjects/CPP_EX1_1 /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles/proj1.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/proj1.dir/depend
 

@@ -57,10 +57,10 @@ RM = /home/ariely122/.cache/JetBrains/RemoteDev/dist/8883b3744bbaf_CLion-251.237
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ariely122/CPP_EX1_1
+CMAKE_SOURCE_DIR = /home/ariely122/CLionProjects/CPP_EX1_1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ariely122/CPP_EX1_1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,16 +87,16 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles /home/ariely122/CPP_EX1_1/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main codegen target
 codegen: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles /home/ariely122/CPP_EX1_1/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 codegen
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles 0
 .PHONY : codegen
 
 # The main clean target
@@ -208,6 +208,30 @@ Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
+Main.o: Main.cpp.o
+.PHONY : Main.o
+
+# target to build an object file
+Main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Main.cpp.o
+.PHONY : Main.cpp.o
+
+Main.i: Main.cpp.i
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Main.cpp.i
+.PHONY : Main.cpp.i
+
+Main.s: Main.cpp.s
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/Main.cpp.s
+.PHONY : Main.cpp.s
+
 PriorityQueue.o: PriorityQueue.cpp.o
 .PHONY : PriorityQueue.o
 
@@ -280,29 +304,29 @@ UnionFind.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/UnionFind.cpp.s
 .PHONY : UnionFind.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+test.o: test.cpp.o
+.PHONY : test.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/main.cpp.o
-.PHONY : main.cpp.o
+test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/test.cpp.o
+.PHONY : test.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+test.i: test.cpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/main.cpp.i
-.PHONY : main.cpp.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+test.s: test.cpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/main.cpp.s
-.PHONY : main.cpp.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/proj1.dir/build.make CMakeFiles/proj1.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 tests.o: tests.cpp.o
 .PHONY : tests.o
@@ -347,6 +371,9 @@ help:
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 	@echo "... PriorityQueue.o"
 	@echo "... PriorityQueue.i"
 	@echo "... PriorityQueue.s"
@@ -356,9 +383,9 @@ help:
 	@echo "... UnionFind.o"
 	@echo "... UnionFind.i"
 	@echo "... UnionFind.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... test.o"
+	@echo "... test.i"
+	@echo "... test.s"
 	@echo "... tests.o"
 	@echo "... tests.i"
 	@echo "... tests.s"

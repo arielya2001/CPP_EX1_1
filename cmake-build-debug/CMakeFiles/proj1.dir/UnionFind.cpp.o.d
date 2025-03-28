@@ -1,7 +1,8 @@
 CMakeFiles/proj1.dir/UnionFind.cpp.o: \
- /home/ariely122/CPP_EX1_1/UnionFind.cpp /usr/include/stdc-predef.h \
- /home/ariely122/CPP_EX1_1/UnionFind.h /usr/include/c++/13/stdexcept \
- /usr/include/c++/13/exception \
+ /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ariely122/CLionProjects/CPP_EX1_1/UnionFind.h \
+ /usr/include/c++/13/stdexcept /usr/include/c++/13/exception \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

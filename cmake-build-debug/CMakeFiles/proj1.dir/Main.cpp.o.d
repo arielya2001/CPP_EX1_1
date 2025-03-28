@@ -1,7 +1,9 @@
-CMakeFiles/proj1.dir/main.cpp.o: /home/ariely122/CPP_EX1_1/main.cpp \
- /usr/include/stdc-predef.h /home/ariely122/CPP_EX1_1/Graph.h \
- /home/ariely122/CPP_EX1_1/Algorithms.h /usr/include/c++/13/iostream \
- /usr/include/c++/13/bits/requires_hosted.h \
+CMakeFiles/proj1.dir/Main.cpp.o: \
+ /home/ariely122/CLionProjects/CPP_EX1_1/Main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ariely122/CLionProjects/CPP_EX1_1/Graph.h \
+ /home/ariely122/CLionProjects/CPP_EX1_1/Algorithms.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \

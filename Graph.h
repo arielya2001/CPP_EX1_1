@@ -7,6 +7,9 @@ namespace graph {
         int id;
         int weight;
         Neighbor* next = nullptr;
+
+        Neighbor(int id, int weight, Neighbor* next = nullptr)
+            : id(id), weight(weight), next(next) {}
     };
 
     class Graph {

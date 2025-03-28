@@ -11,7 +11,7 @@ add_executable(proj1
         doctest.h
         Graph.cpp
         Graph.h
-        main.cpp
+        Main.cpp
         tests.cpp
         Queue.cpp
         Queue.h
@@ -20,4 +20,6 @@ add_executable(proj1
         UnionFind.cpp
         UnionFind.h
         EdgePriorityQueue.cpp
-        EdgePriorityQueue.h)
+        EdgePriorityQueue.h
+        test.cpp
+)

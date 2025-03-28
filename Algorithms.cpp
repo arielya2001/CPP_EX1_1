@@ -4,13 +4,17 @@
 #include "UnionFind.h"
 #include "EdgePriorityQueue.h"
 #include <limits>
+#include <stdexcept>
+
 namespace graph {
 
     // === BFS ===
     Graph Algorithms::bfs(const Graph& g, int source) {
         int n = g.getNumVertices();
-        Graph bfsTree(n);
+        if (source < 0 || source >= n)
+            throw std::invalid_argument("BFS: Source vertex out of range.");
 
+        Graph bfsTree(n);
         bool* visited = new bool[n]();
         Queue q;
         q.enqueue(source);
@@ -53,6 +57,9 @@ namespace graph {
     // DFS - פונקציה ראשית
     Graph Algorithms::dfs(const Graph& g, int source) {
         int n = g.getNumVertices();
+        if (source < 0 || source >= n)
+            throw std::invalid_argument("DFS: Source vertex out of range.");
+
         Graph dfsTree(n);
         bool* visited = new bool[n]();
 
@@ -68,39 +75,43 @@ namespace graph {
         delete[] visited;
         return dfsTree;
     }
+
     Graph Algorithms::dijkstra(const Graph& g, int source) {
         int n = g.getNumVertices();
-        Graph shortestPaths(n);
+        if (source < 0 || source >= n)
+            throw std::invalid_argument("Dijkstra: Source vertex out of range.");
 
-        const int INF = std::numeric_limits<int>::max(); //אינסוף
+        Graph shortestPaths(n);
+        const int INF = std::numeric_limits<int>::max();
         int* distance = new int[n];
         int* parent = new int[n];
 
-        for (int i = 0; i < n; ++i) { //אתחול כל ההורים ל1 והמרחקים לאינסוף
+        for (int i = 0; i < n; ++i) {
             distance[i] = INF;
             parent[i] = -1;
         }
         distance[source] = 0;
 
-        PriorityQueue pq(n); //הכנסת כולם לתור
+        PriorityQueue pq(n);
         for (int i = 0; i < n; ++i) {
-            pq.insert(i, distance[i]); // הכנס את כל הקודקודים מראש
+            pq.insert(i, distance[i]);
         }
 
         while (!pq.isEmpty()) {
             int u = pq.extractMin();
-
             Neighbor* current = g.getNeighbors(u);
             while (current != nullptr) {
                 int v = current->id;
                 int w = current->weight;
 
-                if (distance[u] != INF && distance[u] + w < distance[v]) { //RELAX
+                if (w < 0)
+                    throw std::invalid_argument("Dijkstra: Negative edge weight detected.");
+
+                if (distance[u] != INF && distance[u] + w < distance[v]) {
                     distance[v] = distance[u] + w;
                     parent[v] = u;
                     pq.decreaseKey(v, distance[v]);
                 }
-
                 current = current->next;
             }
         }
@@ -140,25 +151,21 @@ namespace graph {
 
         while (!pq.isEmpty()) {
             int u = pq.extractMin();
-            inMST[u] = true; // הוספה לעץ
+            inMST[u] = true;
 
             Neighbor* current = g.getNeighbors(u);
             while (current != nullptr) {
                 int v = current->id;
                 int w = current->weight;
-                //קודם מעדכנים את הקשת הכי זולה שיכולה להכניס את v לעץ
-                //אח"כ שליפה של הקודקוד הבא לפי הקשת הזולה ביותר מבין האופציות!
-                if (!inMST[v] && w < key[v]) { //לא בעץ ומצאנו דרך זולה יותר
+                if (!inMST[v] && w < key[v]) {
                     parent[v] = u;
                     key[v] = w;
                     pq.decreaseKey(v, w);
                 }
-
                 current = current->next;
             }
         }
 
-        // בניית העץ הפורש המינימלי
         for (int v = 0; v < n; ++v) {
             if (parent[v] != -1) {
                 int u = parent[v];
@@ -172,19 +179,20 @@ namespace graph {
         delete[] inMST;
         return mst;
     }
+
     Graph Algorithms::kruskal(const Graph& g) {
         int n = g.getNumVertices();
         Graph mst(n);
 
-        // 1. בניית תור עדיפויות לכל הקשתות
         int maxEdges = 0;
         for (int u = 0; u < n; ++u) {
             Neighbor* current = g.getNeighbors(u);
             while (current != nullptr) {
-                if (u < current->id) maxEdges++; // בלי כפילויות
+                if (u < current->id) maxEdges++;
                 current = current->next;
             }
         }
+        if (maxEdges == 0) return mst;
 
         EdgePriorityQueue pq(maxEdges);
         for (int u = 0; u < n; ++u) {
@@ -199,10 +207,8 @@ namespace graph {
             }
         }
 
-        // 2. Union-Find
         UnionFind uf(n);
 
-        // 3. שליפה לפי סדר עולה של משקלים
         while (!pq.isEmpty()) {
             Edge e = pq.extractMin();
             int u = e.u;
@@ -218,6 +224,4 @@ namespace graph {
         return mst;
     }
 
-
-
-}
+} // namespace graph

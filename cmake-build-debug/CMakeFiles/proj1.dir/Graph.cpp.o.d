@@ -1,5 +1,7 @@
-CMakeFiles/proj1.dir/Graph.cpp.o: /home/ariely122/CPP_EX1_1/Graph.cpp \
- /usr/include/stdc-predef.h /home/ariely122/CPP_EX1_1/Graph.h \
+CMakeFiles/proj1.dir/Graph.cpp.o: \
+ /home/ariely122/CLionProjects/CPP_EX1_1/Graph.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ariely122/CLionProjects/CPP_EX1_1/Graph.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

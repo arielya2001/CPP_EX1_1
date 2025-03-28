@@ -6,6 +6,8 @@ namespace graph {
 
     PriorityQueue::PriorityQueue(int capacity)
         : capacity(capacity), size(0) {
+        if (capacity <= 0)
+            throw std::invalid_argument("PriorityQueue capacity must be positive.");
         data = new Element[capacity];
     }
 
@@ -16,6 +18,9 @@ namespace graph {
     void PriorityQueue::insert(int vertex, int priority) {
         if (size == capacity)
             throw std::runtime_error("PriorityQueue overflow");
+
+        if (contains(vertex))
+            throw std::invalid_argument("Vertex already exists in PriorityQueue.");
 
         data[size].vertex = vertex;
         data[size].priority = priority;
@@ -34,18 +39,21 @@ namespace graph {
         }
 
         int minVertex = data[minIndex].vertex;
-        data[minIndex] = data[size - 1]; // Move last to minIndex
+        data[minIndex] = data[size - 1];
         size--;
         return minVertex;
     }
 
     void PriorityQueue::decreaseKey(int vertex, int newPriority) {
         for (int i = 0; i < size; ++i) {
-            if (data[i].vertex == vertex && data[i].priority > newPriority) {
+            if (data[i].vertex == vertex) {
+                if (newPriority >= data[i].priority)
+                    throw std::invalid_argument("New priority is not smaller than current priority.");
                 data[i].priority = newPriority;
                 return;
             }
         }
+        throw std::runtime_error("Vertex not found in PriorityQueue.");
     }
 
     bool PriorityQueue::isEmpty() const {

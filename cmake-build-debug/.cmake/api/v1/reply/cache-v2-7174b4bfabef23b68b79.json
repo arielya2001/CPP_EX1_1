@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ariely122/CPP_EX1_1/cmake-build-debug"
+			"value" : "/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/ariely122/CPP_EX1_1/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/ariely122/CPP_EX1_1"
+			"value" : "/home/ariely122/CLionProjects/CPP_EX1_1"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1191,7 +1191,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/ariely122/CPP_EX1_1/cmake-build-debug"
+			"value" : "/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug"
 		},
 		{
 			"name" : "proj1_IS_TOP_LEVEL",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/ariely122/CPP_EX1_1"
+			"value" : "/home/ariely122/CLionProjects/CPP_EX1_1"
 		}
 	],
 	"kind" : "cache",

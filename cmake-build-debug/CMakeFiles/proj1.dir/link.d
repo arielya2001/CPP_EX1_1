@@ -4,7 +4,7 @@ proj1: \
   /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o \
   CMakeFiles/proj1.dir/Algorithms.cpp.o \
   CMakeFiles/proj1.dir/Graph.cpp.o \
-  CMakeFiles/proj1.dir/main.cpp.o \
+  CMakeFiles/proj1.dir/Main.cpp.o \
   CMakeFiles/proj1.dir/tests.cpp.o \
   CMakeFiles/proj1.dir/Queue.cpp.o \
   CMakeFiles/proj1.dir/PriorityQueue.cpp.o \
@@ -49,7 +49,7 @@ CMakeFiles/proj1.dir/Algorithms.cpp.o:
 
 CMakeFiles/proj1.dir/Graph.cpp.o:
 
-CMakeFiles/proj1.dir/main.cpp.o:
+CMakeFiles/proj1.dir/Main.cpp.o:
 
 CMakeFiles/proj1.dir/tests.cpp.o:
 

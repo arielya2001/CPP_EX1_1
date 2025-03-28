@@ -1,7 +1,7 @@
-CMakeFiles/proj1.dir/Queue.cpp.o: \
- /home/ariely122/CLionProjects/CPP_EX1_1/Queue.cpp \
+CMakeFiles/proj1.dir/EdgePriorityQueue.cpp.o: \
+ /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.cpp \
  /usr/include/stdc-predef.h \
- /home/ariely122/CLionProjects/CPP_EX1_1/Queue.h \
+ /home/ariely122/CLionProjects/CPP_EX1_1/EdgePriorityQueue.h \
  /usr/include/c++/13/stdexcept /usr/include/c++/13/exception \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
