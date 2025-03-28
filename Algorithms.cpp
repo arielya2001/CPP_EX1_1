@@ -11,6 +11,8 @@ namespace graph {
     // === BFS ===
     Graph Algorithms::bfs(const Graph& g, int source) {
         int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("bfs: Graph is empty.");
         if (source < 0 || source >= n)
             throw std::invalid_argument("BFS: Source vertex out of range.");
 
@@ -57,6 +59,8 @@ namespace graph {
     // DFS - פונקציה ראשית
     Graph Algorithms::dfs(const Graph& g, int source) {
         int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("dfs: Graph is empty.");
         if (source < 0 || source >= n)
             throw std::invalid_argument("DFS: Source vertex out of range.");
 
@@ -65,7 +69,6 @@ namespace graph {
 
         dfs_visit(g, dfsTree, visited, source);
 
-        // המשך לרכיבים לא קשורים
         for (int u = 0; u < n; ++u) {
             if (!visited[u]) {
                 dfs_visit(g, dfsTree, visited, u);
@@ -78,6 +81,8 @@ namespace graph {
 
     Graph Algorithms::dijkstra(const Graph& g, int source) {
         int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("dijkstra: Graph is empty.");
         if (source < 0 || source >= n)
             throw std::invalid_argument("Dijkstra: Source vertex out of range.");
 
@@ -131,6 +136,8 @@ namespace graph {
 
     Graph Algorithms::prim(const Graph& g) {
         int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("Kruskal: Graph is empty.");
         Graph mst(n);
 
         const int INF = std::numeric_limits<int>::max();
@@ -182,6 +189,8 @@ namespace graph {
 
     Graph Algorithms::kruskal(const Graph& g) {
         int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("Kruskal: Graph is empty.");
         Graph mst(n);
 
         int maxEdges = 0;

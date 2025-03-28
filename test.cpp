@@ -50,10 +50,14 @@ TEST_CASE("Graph with isolated and empty vertices") {
     SUBCASE("Empty graph") {
         Graph g(0);
         CHECK(g.getNumVertices() == 0);
+
         CHECK_THROWS_AS(Algorithms::bfs(g, 0), std::invalid_argument);
         CHECK_THROWS_AS(Algorithms::dfs(g, 0), std::invalid_argument);
         CHECK_THROWS_AS(Algorithms::dijkstra(g, 0), std::invalid_argument);
+        CHECK_THROWS_AS(Algorithms::prim(g), std::invalid_argument);
+        CHECK_THROWS_AS(Algorithms::kruskal(g), std::invalid_argument);
     }
+
 
     SUBCASE("Graph with isolated vertices") {
         Graph g(3);  // כל הקודקודים מבודדים
