@@ -182,3 +182,62 @@ TEST_CASE("UnionFind operations") {
     for (int i = 0; i < 5; ++i)
         CHECK(uf.find(i) == uf.find(0));
 }
+//NOW JUST A REGULAR TEST FOR CONNECTED GRAPH!
+
+TEST_CASE("Run all algorithms on a regular connected graph") {
+    Graph g(6);
+    g.addEdge(0, 1, 2);
+    g.addEdge(1, 2, 4);
+    g.addEdge(2, 3, 1);
+    g.addEdge(3, 4, 3);
+    g.addEdge(4, 5, 2);
+    g.addEdge(5, 0, 7);
+    g.addEdge(1, 4, 6);
+
+    int source = 2;
+
+    SUBCASE("BFS from vertex 2") {
+        Graph bfsTree = Algorithms::bfs(g, source);
+        // מצפים לכל הקודקודים להיות מחוברים כי הגרף מחובר
+        for (int v = 0; v < g.getNumVertices(); ++v) {
+            if (v != source) {
+                CHECK(hasIncomingEdgeTo(bfsTree, v));
+            }
+        }
+    }
+
+    SUBCASE("DFS from vertex 2") {
+        Graph dfsTree = Algorithms::dfs(g, source);
+        // כמו ב־BFS, מצפים לכל הקודקודים להיות מחוברים
+        for (int v = 0; v < g.getNumVertices(); ++v) {
+            if (v != source) {
+                CHECK(hasIncomingEdgeTo(dfsTree, v));
+            }
+        }
+    }
+
+    SUBCASE("Dijkstra from vertex 2") {
+        Graph dijkstraTree = Algorithms::dijkstra(g, source);
+        // לוודא שיש קשתות מהתוצאה
+        int count = 0;
+        for (int v = 0; v < g.getNumVertices(); ++v)
+            count += dijkstraTree.getNeighborCount(v);
+        CHECK(count > 0);
+    }
+
+    SUBCASE("Prim's algorithm") {
+        Graph primTree = Algorithms::prim(g);
+        int edgeCount = 0;
+        for (int v = 0; v < g.getNumVertices(); ++v)
+            edgeCount += primTree.getNeighborCount(v);
+        CHECK(edgeCount / 2 == g.getNumVertices() - 1);  // עץ פורש מינימלי
+    }
+
+    SUBCASE("Kruskal's algorithm") {
+        Graph kruskalTree = Algorithms::kruskal(g);
+        int edgeCount = 0;
+        for (int v = 0; v < g.getNumVertices(); ++v)
+            edgeCount += kruskalTree.getNeighborCount(v);
+        CHECK(edgeCount / 2 == g.getNumVertices() - 1);  // עץ פורש מינימלי
+    }
+}

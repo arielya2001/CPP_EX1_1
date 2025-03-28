@@ -12,7 +12,6 @@ add_executable(proj1
         Graph.cpp
         Graph.h
         Main.cpp
-        tests.cpp
         Queue.cpp
         Queue.h
         PriorityQueue.cpp

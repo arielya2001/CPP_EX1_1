@@ -109,8 +109,12 @@ namespace graph {
                 int v = current->id;
                 int w = current->weight;
 
-                if (w < 0)
+                if (w < 0) {
+                    delete[] distance;
+                    delete[] parent;
                     throw std::invalid_argument("Dijkstra: Negative edge weight detected.");
+                }
+
 
                 if (distance[u] != INF && distance[u] + w < distance[v]) {
                     distance[v] = distance[u] + w;

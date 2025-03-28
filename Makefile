@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++11 -Wall -g
 
 # קבצי המקור
 SRC = Graph.cpp Algorithms.cpp Queue.cpp PriorityQueue.cpp UnionFind.cpp EdgePriorityQueue.cpp
@@ -20,8 +20,10 @@ Main: $(OBJ) $(MAIN)
 test: $(OBJ) $(TEST)
 	$(CXX) $(CXXFLAGS) -o $(TEST_OUT) $(OBJ) $(TEST)
 
-valgrind: test
-	valgrind ./$(TEST_OUT)
+valgrind: test Main
+	-valgrind --leak-check=full --track-origins=yes ./$(TEST_OUT)
+	-valgrind --leak-check=full --track-origins=yes ./$(MAIN_OUT)
+
 
 clean:
 	rm -f *.o $(MAIN_OUT) $(TEST_OUT)
