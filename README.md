@@ -1,90 +1,127 @@
-<div dir="rtl">
+# Graph Algorithms in C++
+# ID - 318727187
+## 🧠 Overview
 
-# מטלה מספר 1 - מימוש גרף על ידי רשימת שכנויות
-
-### יושרה אקדמית
-
-במהלך העבודה על המטלות, מותר להתייעץ עם סטודנטים אחרים ולחפש מידע באינטרנט. עם זאת, חל איסור להעתיק קטעי קוד שלמים ממקורות חיצוניים, כולל סטודנטים אחרים, אתרי אינטרנט ומודלי בינה מלאכותית (כגון ChatGPT).
-
-יש לדווח על כל עזרה שקיבלתם, בין אם מדובר בהתייעצות עם סטודנטים אחרים או במידע שנמצא באינטרנט, בהתאם ל[תקנון היושר של המחלקה](https://www.ariel.ac.il/wp/cs/wp-content/uploads/sites/88/2020/08/Guidelines-for-Academic-Integrity.pdf).
-**במקרה של שימוש בכלי בינה מלאכותית (AI), יש לצרף את הפרומפטים שהוזנו ואת התשובות שהתקבלו**.
-
------
-* **מטרת המטלה:** הבנת החומר הנלמד בהרצאות הראשונות, כגון: ניהול זיכרון ב ++C, מחלקות, בנאים, מפרקים, עצמים, מרחבי שמות, העברת פרמטרים לפונקציות, החזרת אובייקטים.
-* **שימו לב!** במטלה **אסור** להשתמש בספרייה הסטנדרטית, ניתן להשתמש במערך. **זאת אומרת תצטרכו לממש מבנה/י נתונים המתאים לצרכי המטלה**. כל המיכלים הסטנדרטיים כולל vector או stack *אינם זמינים* לכם במטלה זו.
-* **ההגשה ביחידים**.
+This project implements a graph structure and several classical graph algorithms in C++, without using STL containers (as required by the assignment).
+The project includes unit tests using the `doctest` framework, and supports memory leak checks using `valgrind`.
 
 ---
 
-## הוראות הגשה ב Moodle:
+## 📂 Project Structure
 
-במערכת Moodle יש להגיש **קובץ טקסט למשל (`submission.txt`)** המכיל 3 שורות בפורמט הבא:
-
-1. **תעודת זהות** – מספר תעודת הזהות של הסטודנט.
-2. **קישור להגשה** – קישור למאגר ה-GitHub שבו נמצא הפרויקט.
-3. **פרטי ה-commit האחרון** – המחרוזת המזהה של ה-commit האחרון (`commit hash`) 
-
- - דוגמה לקובץ הגשה תקין:
 ```
-123456789
-https://github.com/example-user/graph-assignment
-e3f1c1a 
+.
+├── Graph.h / Graph.cpp           # Graph class with adjacency list representation  
+├── Algorithms.h / Algorithms.cpp # Static class with BFS, DFS, Dijkstra, Prim, Kruskal  
+├── Queue.h / Queue.cpp           # Custom queue used in BFS  
+├── PriorityQueue.h / .cpp        # Min-priority queue for Dijkstra and Prim  
+├── EdgePriorityQueue.h / .cpp    # Min-priority queue for Kruskal (by edge weight)  
+├── UnionFind.h / .cpp            # Union-Find structure for Kruskal  
+├── Main.cpp                      # Demo code that runs the algorithms on sample graphs  
+├── test.cpp                      # Unit tests using doctest  
+├── Makefile                      # Compilation, testing, valgrind, cleanup  
+└── README.md                     # This file  
 ```
 
 ---
 
-גרפים הם חלק בלתי נפרד ממדעי המחשב. במהלך הלימודים נחשפתם לדרכים שונות לייצוג של גרפים (מטריצת שכנויות, רשימת שכנויות ועוד).
+## 🧱 Classes and Their Roles
 
-במטלה זו תממשו גרף באמצעות **רשימת שכנויות** – [Adjacency List](https://en.wikipedia.org/wiki/Adjacency_list).
+### `Graph`
+- Uses adjacency list (`Neighbor*`) for storing undirected or directed weighted edges(using Struct)
+- Supports adding/removing edges and querying neighbors.
+
+### `Algorithms` (Static)
+Implements the following algorithms:
+- `bfs(Graph, source)`
+- `dfs(Graph, source)`
+- `dijkstra(Graph, source)`
+- `prim(Graph)`
+- `kruskal(Graph)`
+
+Each algorithm throws `std::invalid_argument` when given an invalid input (e.g., invalid source vertex, negative weights, or empty graph).
+
+### `Queue`
+- Implements a basic queue using a linked list.
+- Used by BFS algorithm.
+
+### `PriorityQueue`
+- Min-priority queue for integers (vertices).
+- Used in Dijkstra and Prim algorithms.
+
+### `EdgePriorityQueue`
+- Min-priority queue for edges based on weights.
+- Used in Kruskal’s algorithm.
+
+### `UnionFind`
+- Disjoint-set structure with path compression and union by rank.
+- Detects cycles in Kruskal’s algorithm.
 
 ---
 
-## דרישות המטלה:
+## 🧪 Unit Testing
 
-### מימוש המחלקות הבאות:
-הוסיפו את המחלקות במרחב שמות (namespace) חדש ( קראו לו ```graph```).
+Tests are located in `test.cpp` using [doctest](https://github.com/doctest/doctest).
 
-#### מחלקה בשם `Graph`:
-הגרף יאותחל עם מספר קודקודים מסוים ולא ניתן יהיה לשנות את מספר הקודקודים בגרף. 
-המחלקה תכיל את רשימת השכנויות וכן את הפונקציות הבאות:
+### To run the tests:
+```
+make test  
+./graph_test
+```
 
-1. פונקציה  `addEdge`  מקבלת שלושה מספרים שלמים: מקור, יעד ומשקל (ברירת המחדל למשקל היא 1). הפונקציה תוסיף צלע (לא מכוונת) לגרף.
-2. פונקציה  `removeEdge` מקבלת שני מספרים שלמים המייצגים צלע ומוחקת אותה מהגרף. אם הצלע לא קיימת, הפונקציה תזרוק חריגה.
-3. פונקציה  `print_graph` מדפיסה את הגרף בצורה כלשהי הגיונית לבחירתכם.
-4. במידת הצורך, יש להוסיף בנאים\פונקציות עזר רלונטיות למחלקה.
+Tests include:
+- Basic graph operations
+- Validity and correctness of each algorithm
+- Edge cases such as empty graphs, disconnected graphs, and isolated vertices
+- Exception handling for invalid inputs
 
-#### מחלקה בשם `Algorithms`:
-מחלקה זו תממש אלגוריתמים שונים על גרף לא מכוון. הכי קרוב שאפשר לאלו שלמדתם בקורס אלגוריתמים 1. המחלקה תכיל את הפונקציות הבאות:
-
-1. פונקציה `bfs` – מקבלת גרף וקודקוד מקור ומחזירה גרף שהוא עץ מושרש (שהשורש הוא קודקוד המקור כמובן) שהתקבל מסריקת BFS.  
-2. פונקציה `dfs` – מקבלת גרף וקודקוד ממנו תתחיל הסריקה ומחזירה גרף (עץ או יער) המתקבל לפי סריקת DFS. (עץ זה יכיל קודקודים מקוריים ורק צלעות מסוג tree edges).
-3. פונקציה `dijkstra` – מקבלת גרף וקודקוד התחלה ומחזירה עץ ממושקל של מסלולים קצרים ביותר.
-4. פונקציה `prim` – מקבלת גרף, מחשבת את העץ הפורש המינימלי ומחזירה אותו (כלומר מחזירה גרף המייצג את העץ).
-5. פונקציה `kruskal` – כמו סעיף הקודם.
--  מכיוון ש-STL אינה זמינה במטלה זו, לצורך מימוש אלגוריתמים אלו תצטרכו לממש באופן בסיסי מבני נתונים נוספים: תור ו\או תור עדיפויות ו-union find. מימוש בסיסי אומר כי מספיק לממש מבנים אלו רק פונקציאונלית, אין דרישה מיוחדת לסיבוכיות. 
-    
 ---
 
-#### דרישות נוספות:
+## 🧼 Memory Leak Detection
 
-- חשוב לוודא שה-repository ציבורי.
-- כתבו בתחילת **כל** קובץ את כתובת המייל שלכם.
-- כתבו קוד נקי, מסודר, מחולק לקבצים, מודולרי, מתועד בצורה מספקת וכמובן בדיקות יחידה עבור כל הפונקציות.
-- בדקו את תקינות הקלט ולזרוק חריגות מתאימות במידת הצורך.
-- לשימושכם הקישור הבא [doctest](https://github.com/doctest/doctest) בו תוכלו לראות דוגמאות נוספות לשימוש בסיפריה זו.
-- יש לבדוק שאין זליגת זיכרון באמצעות `valgrind`.
-- יש לצרף גם קובץ `README` עם הסבר על פרויקט, על חלוקה למחלקות וקבצים וכל מידע אחר רלוונטי.
+Memory is manually managed (new/delete). Use `valgrind` to check for leaks.
 
+### To check for memory leaks:
+```
+make valgrind
+```
 
-#### קובץ `Makefile`:
-הוסיפו לפרויקט קובץ `Makefile` הכולל את הפקודות הבאות:
-- הפקודה `make Main` – להרצת קובץ ההדגמה.
-- הפקודה `make test` – להרצת בדיקות היחידה.
-- הפקודה `make valgrind` – בדיקת זליגת זיכרון באמצעות valgrind.
-- הפקודה `make clean` - מוחקת את כל הקבצים הלא רלוונטיים לאחר ההרצה.
+Valgrind will run both the test executable and the demo (`graph_demo`) and print a memory usage summary.
 
+---
 
-בהצלחה!
+## 🚀 Running the Demo
 
-</div>
+The demo file `Main.cpp` shows usage of all algorithms on various example graphs.
 
+### To build and run:
+```
+make Main  
+./graph_demo
+```
+
+---
+
+## 🧹 Clean Build Files
+
+To remove all compiled output files and object files:
+```
+make clean
+```
+
+---
+
+## 📌 Notes
+
+- STL containers were avoided intentionally, using custom data structures only.
+- Algorithms are designed with robustness in mind.
+- Valgrind results confirm no memory leaks.
+- Proper exception handling is in place for all critical input checks.
+
+---
+
+## 📅 Author & Date
+
+- Developed by: [Ariel Ya'acobi]  
+- Assignment: Systems programming 2 – Graph Algorithms (CPP_EX1_1)  
+- Date: March 2025
