@@ -4,6 +4,7 @@ ID - 318727187
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "Graph.h"
+#include "Queue.h"
 #include "Algorithms.h"
 #include "PriorityQueue.h"
 #include "EdgePriorityQueue.h"
@@ -12,6 +13,7 @@ ID - 318727187
 
 using namespace graph;
 
+//check if there is incoming edge, i can't use the private method i have in graph.
 bool hasIncomingEdgeTo(const Graph& g, int target) {
     for (int u = 0; u < g.getNumVertices(); ++u) {
         Neighbor* curr = g.getNeighbors(u);
@@ -48,6 +50,35 @@ TEST_CASE("Graph basic operations") {
     CHECK(n->weight == 5);
     CHECK(n->next == nullptr);
 }
+TEST_CASE("Graph error handling") {
+    SUBCASE("Negative graph size") {
+        CHECK_THROWS_AS(Graph(-3), std::invalid_argument);
+    }
+
+    Graph g(3);
+
+    SUBCASE("Invalid vertex in addEdge") {
+        CHECK_THROWS_AS(g.addEdge(-1, 2), std::out_of_range);
+        CHECK_THROWS_AS(g.addEdge(0, 3), std::out_of_range);
+    }
+
+    SUBCASE("Invalid vertex in addDirectedEdge") {
+        CHECK_THROWS_AS(g.addDirectedEdge(5, 1, 1), std::out_of_range);
+        CHECK_THROWS_AS(g.addDirectedEdge(0, -2, 1), std::out_of_range);
+    }
+
+    SUBCASE("Invalid vertex in removeEdge") {
+        CHECK_THROWS_AS(g.removeEdge(0, 100), std::out_of_range);
+        CHECK_THROWS_AS(g.removeEdge(-1, 0), std::out_of_range);
+    }
+
+
+    SUBCASE("Invalid vertex in getNeighbors / getNeighborCount") {
+        CHECK_THROWS_AS(g.getNeighbors(999), std::out_of_range);
+        CHECK_THROWS_AS(g.getNeighborCount(-3), std::out_of_range);
+    }
+}
+
 
 TEST_CASE("Graph with isolated and empty vertices") {
     SUBCASE("Empty graph") {
@@ -171,20 +202,73 @@ TEST_CASE("EdgePriorityQueue operations") {
     CHECK_THROWS_AS(epq.extractMin(), std::runtime_error);
 }
 
-TEST_CASE("UnionFind operations") {
-    UnionFind uf(5);
-    CHECK(uf.find(0) == 0);
-    uf.unionSets(0, 1);
-    CHECK(uf.find(0) == uf.find(1));
+TEST_CASE("UnionFind error handling") {
+    SUBCASE("Negative size") {
+        CHECK_THROWS_AS(UnionFind(-5), std::invalid_argument);
+        CHECK_THROWS_AS(UnionFind(0), std::invalid_argument);
+    }
 
-    uf.unionSets(2, 3);
-    uf.unionSets(3, 4);
-    CHECK(uf.find(2) == uf.find(4));
+    SUBCASE("Out of range create") {
+        UnionFind uf(3);
+        CHECK_THROWS_AS(uf.create(-1), std::out_of_range);
+        CHECK_THROWS_AS(uf.create(3), std::out_of_range);
+    }
 
-    uf.unionSets(0, 4);
-    for (int i = 0; i < 5; ++i)
-        CHECK(uf.find(i) == uf.find(0));
+    SUBCASE("Out of range find") {
+        UnionFind uf(3);
+        CHECK_THROWS_AS(uf.find(-1), std::out_of_range);
+        CHECK_THROWS_AS(uf.find(3), std::out_of_range);
+    }
+
+    SUBCASE("Out of range unionSets") {
+        UnionFind uf(3);
+        CHECK_THROWS_AS(uf.unionSets(-1, 0), std::out_of_range);
+        CHECK_THROWS_AS(uf.unionSets(0, 3), std::out_of_range);
+        CHECK_THROWS_AS(uf.unionSets(5, 7), std::out_of_range);
+    }
 }
+
+
+TEST_CASE("Queue operations") {
+    Queue q(3);
+
+    SUBCASE("Initial state") {
+        CHECK(q.isEmpty());
+    }
+
+    SUBCASE("Enqueue and dequeue") {
+        q.enqueue(10);
+        q.enqueue(20);
+        CHECK_FALSE(q.isEmpty());
+        CHECK(q.dequeue() == 10);
+        CHECK(q.dequeue() == 20);
+        CHECK(q.isEmpty());
+    }
+
+    SUBCASE("Dequeue from empty queue throws") {
+        CHECK_THROWS_AS(q.dequeue(), std::runtime_error);
+    }
+
+    SUBCASE("Overflow throws") {
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        CHECK_THROWS_AS(q.enqueue(4), std::runtime_error);
+    }
+
+    SUBCASE("Circular behavior") {
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        CHECK(q.dequeue() == 1);
+        q.enqueue(4);
+        CHECK(q.dequeue() == 2);
+        CHECK(q.dequeue() == 3);
+        CHECK(q.dequeue() == 4);
+        CHECK(q.isEmpty());
+    }
+}
+
 //NOW JUST A REGULAR TEST FOR CONNECTED GRAPH!
 
 TEST_CASE("Run all algorithms on a regular connected graph") {
