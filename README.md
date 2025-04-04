@@ -14,8 +14,7 @@ The project includes unit tests using the `doctest` framework, and supports memo
 ├── Graph.h / Graph.cpp           # Graph class with adjacency list representation  
 ├── Algorithms.h / Algorithms.cpp # Static class with BFS, DFS, Dijkstra, Prim, Kruskal  
 ├── Queue.h / Queue.cpp           # Custom queue used in BFS  
-├── PriorityQueue.h / .cpp        # Min-priority queue for Dijkstra and Prim  
-├── EdgePriorityQueue.h / .cpp    # Min-priority queue for Kruskal (by edge weight)  
+├── PriorityQueue.h / .cpp        # Min-priority queue for Dijkstra and Prim    
 ├── UnionFind.h / .cpp            # Union-Find structure for Kruskal  
 ├── Main.cpp                      # Demo code that runs the algorithms on sample graphs  
 ├── test.cpp                      # Unit tests using doctest  
@@ -48,10 +47,6 @@ Each algorithm throws `std::invalid_argument` when given an invalid input (e.g.,
 ### `PriorityQueue`
 - Min-priority queue for integers (vertices).
 - Used in Dijkstra and Prim algorithms.
-
-### `EdgePriorityQueue`
-- Min-priority queue for edges based on weights.
-- Used in Kruskal’s algorithm.
 
 ### `UnionFind`
 - Disjoint-set structure with path compression and union by rank.
@@ -122,6 +117,6 @@ make clean
 
 ## 📅 Author & Date
 
-- Developed by: [Ariel Ya'acobi]  
+- Developed by: Ariel Ya'acobi
 - Assignment: Systems programming 2 – Graph Algorithms (CPP_EX1_1)  
-- Date: March 2025
+- Date: April 2025
