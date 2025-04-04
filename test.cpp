@@ -7,7 +7,6 @@ Mail - ariel.yaacobi@msmail.ariel.ac.il
 #include "Queue.h"
 #include "Algorithms.h"
 #include "PriorityQueue.h"
-#include "EdgePriorityQueue.h"
 #include "UnionFind.h"
 #include <stdexcept>
 
@@ -186,22 +185,6 @@ TEST_CASE("PriorityQueue operations") {
     CHECK_THROWS_AS(pq.extractMin(), std::runtime_error);
 }
 
-TEST_CASE("EdgePriorityQueue operations") {
-    EdgePriorityQueue epq(3);
-    epq.insert({0, 1, 5});
-    epq.insert({2, 3, 2});
-    epq.insert({1, 3, 4});
-
-    Edge e = epq.extractMin();
-    CHECK((e.u == 2 && e.v == 3 && e.weight == 2));
-    e = epq.extractMin();
-    CHECK((e.u == 1 && e.v == 3 && e.weight == 4));
-    e = epq.extractMin();
-    CHECK((e.u == 0 && e.v == 1 && e.weight == 5));
-    CHECK(epq.isEmpty());
-    CHECK_THROWS_AS(epq.extractMin(), std::runtime_error);
-}
-
 TEST_CASE("UnionFind error handling") {
     SUBCASE("Negative size") {
         CHECK_THROWS_AS(UnionFind(-5), std::invalid_argument);
@@ -328,3 +311,31 @@ TEST_CASE("Run all algorithms on a regular connected graph") {
         CHECK(edgeCount / 2 == g.getNumVertices() - 1);  // עץ פורש מינימלי
     }
 }
+TEST_CASE("Test collectEdges and sortEdgesByWeight") {
+    Graph g(4);
+    g.addEdge(0, 1, 4);
+    g.addEdge(0, 2, 2);
+    g.addEdge(1, 3, 5);
+
+    int edgeCount = 0;
+    Edge* edges = collectEdges(g, edgeCount);
+    CHECK(edgeCount == 3);
+
+    sortEdgesByWeight(edges, edgeCount);
+
+    CHECK(edges[0].u == 0);
+    CHECK(edges[0].v == 2);
+    CHECK(edges[0].weight == 2);
+
+    CHECK(edges[1].u == 0);
+    CHECK(edges[1].v == 1);
+    CHECK(edges[1].weight == 4);
+
+    CHECK(edges[2].u == 1);
+    CHECK(edges[2].v == 3);
+    CHECK(edges[2].weight == 5);
+
+
+    delete[] edges;
+}
+

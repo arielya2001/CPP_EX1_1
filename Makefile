@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -g
 
 # קבצי המקור
-SRC = Graph.cpp Algorithms.cpp Queue.cpp PriorityQueue.cpp UnionFind.cpp EdgePriorityQueue.cpp
+SRC = Graph.cpp Algorithms.cpp Queue.cpp PriorityQueue.cpp UnionFind.cpp
 OBJ = $(SRC:.cpp=.o)
 
 # קבצי קלט

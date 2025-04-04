@@ -5,7 +5,6 @@ Mail - ariel.yaacobi@msmail.ariel.ac.il
 #include "Queue.h"
 #include "PriorityQueue.h"
 #include "UnionFind.h"
-#include "EdgePriorityQueue.h"
 #include <limits>
 #include <stdexcept>
 
@@ -144,9 +143,9 @@ namespace graph {
     Graph Algorithms::prim(const Graph& g) {
         int n = g.getNumVertices();
         if (n == 0)
-            throw std::invalid_argument("Kruskal: Graph is empty.");
-        Graph mst(n);
+            throw std::invalid_argument("Prim: Graph is empty.");
 
+        Graph mst(n);
         const int INF = std::numeric_limits<int>::max();
         int* key = new int[n];
         int* parent = new int[n];
@@ -156,12 +155,12 @@ namespace graph {
             key[i] = INF;
             parent[i] = -1;
         }
-        key[0] = 0;
+
+        int start = 0;
+        key[start] = 0;
 
         PriorityQueue pq(n);
-        for (int i = 0; i < n; ++i) {
-            pq.insert(i, key[i]);
-        }
+        pq.insert(start, key[start]);
 
         while (!pq.isEmpty()) {
             int u = pq.extractMin();
@@ -172,19 +171,22 @@ namespace graph {
                 int v = current->id;
                 int w = current->weight;
                 if (!inMST[v] && w < key[v]) {
-                    parent[v] = u;
                     key[v] = w;
-                    pq.decreaseKey(v, w);
+                    parent[v] = u;
+                    if (!pq.contains(v))
+                        pq.insert(v, key[v]);
+                    else
+                        pq.decreaseKey(v, key[v]);
+
                 }
                 current = current->next;
             }
         }
 
+        // הוספת הקשתות לעץ הפורש
         for (int v = 0; v < n; ++v) {
             if (parent[v] != -1) {
-                int u = parent[v];
-                int w = key[v];
-                mst.addEdge(u, v, w);
+                mst.addEdge(v, parent[v], key[v]);
             }
         }
 
@@ -194,50 +196,69 @@ namespace graph {
         return mst;
     }
 
-    Graph Algorithms::kruskal(const Graph& g) {
+
+    //collecting all edges in undirected graph
+    Edge* collectEdges(const Graph& g, int& edgeCount) {
         int n = g.getNumVertices();
-        if (n == 0)
-            throw std::invalid_argument("Kruskal: Graph is empty.");
-        Graph mst(n);
+        Edge* edges = new Edge[n * n];
+        edgeCount = 0;
 
-        int maxEdges = 0;
-        for (int u = 0; u < n; ++u) {
-            Neighbor* current = g.getNeighbors(u);
-            while (current != nullptr) {
-                if (u < current->id) maxEdges++;
-                current = current->next;
-            }
-        }
-        if (maxEdges == 0) return mst;
-
-        EdgePriorityQueue pq(maxEdges);
         for (int u = 0; u < n; ++u) {
             Neighbor* current = g.getNeighbors(u);
             while (current != nullptr) {
                 int v = current->id;
                 int w = current->weight;
                 if (u < v) {
-                    pq.insert({u, v, w});
+                    edges[edgeCount++] = {u, v, w};
                 }
                 current = current->next;
             }
         }
 
+        return edges;
+    }
+
+    //BUBBLE SORT FOR EDGES
+    void sortEdgesByWeight(Edge* edges, int edgeCount) {
+        for (int i = 0; i < edgeCount - 1; ++i) {
+            for (int j = 0; j < edgeCount - i - 1; ++j) {
+                if (edges[j].weight > edges[j + 1].weight) {
+                    Edge temp = edges[j];
+                    edges[j] = edges[j + 1];
+                    edges[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+
+    Graph Algorithms::kruskal(const Graph& g) {
+        int n = g.getNumVertices();
+        if (n == 0)
+            throw std::invalid_argument("Kruskal: Graph is empty.");
+
+        Graph mst(n);
         UnionFind uf(n);
 
-        while (!pq.isEmpty()) {
-            Edge e = pq.extractMin();
-            int u = e.u;
-            int v = e.v;
-            int w = e.weight;
+        int edgeCount = 0;
+        Edge* edges = collectEdges(g, edgeCount);
+        sortEdgesByWeight(edges, edgeCount);
+
+        for (int i = 0; i < edgeCount; ++i) {
+            int u = edges[i].u;
+            int v = edges[i].v;
+            int w = edges[i].weight;
 
             if (uf.find(u) != uf.find(v)) {
-                mst.addEdge(u, v, w);
                 uf.unionSets(u, v);
+                mst.addEdge(u, v, w);
             }
         }
 
+        delete[] edges;
         return mst;
     }
+
 
 } // namespace graph
