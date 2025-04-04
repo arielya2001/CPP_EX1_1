@@ -42,7 +42,7 @@ namespace graph {
 
         delete[] visited;
         return bfsTree;
-    }fd
+    }
 
     // DFS - פונקציית עזר רקורסיבית
     void dfs_visit(const Graph& g, Graph& dfsTree, bool* visited, int u) {
