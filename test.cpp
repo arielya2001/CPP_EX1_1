@@ -24,7 +24,7 @@ bool hasIncomingEdgeTo(const Graph& g, int target) {
     return false;
 }
 
-TEST_CASE("Graph basic operations") {
+TEST_CASE("Graph basic operations:") {
     Graph g(4);
 
     CHECK_NOTHROW(g.addEdge(0, 1));
