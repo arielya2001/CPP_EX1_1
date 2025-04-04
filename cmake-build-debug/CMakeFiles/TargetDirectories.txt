@@ -1,3 +1,0 @@
-/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles/proj1.dir
-/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

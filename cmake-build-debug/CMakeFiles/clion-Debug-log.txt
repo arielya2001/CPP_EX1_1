@@ -1,4 +1,5 @@
-/home/ariely122/.cache/JetBrains/RemoteDev/dist/8883b3744bbaf_CLion-251.23774.112/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/ariely122/CLionProjects/CPP_EX1_1 -B /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug
--- Configuring done (0.0s)
--- Generating done (0.0s)
--- Build files have been written to: /home/ariely122/CLionProjects/CPP_EX1_1/cmake-build-debug
+/home/ariely122/.cache/JetBrains/RemoteDev/dist/7e91c9460ef4d_CLion-251.23774.202/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /home/ariely122/CLionProjects -B /home/ariely122/CLionProjects/cmake-build-debug
+CMake Error: CMake was unable to find a build program corresponding to "Unix Makefiles".  CMAKE_MAKE_PROGRAM is not set.  You probably need to select a different build tool.
+CMake Error: CMAKE_C_COMPILER not set, after EnableLanguage
+CMake Error: CMAKE_CXX_COMPILER not set, after EnableLanguage
+-- Configuring incomplete, errors occurred!
