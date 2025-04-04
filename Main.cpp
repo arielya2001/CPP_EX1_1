@@ -21,8 +21,12 @@ void runAllAlgorithms(const Graph& g, const std::string& name, int source = 0) {
     dfsTree.print_graph();
 
     std::cout << "\n--- Dijkstra (from " << source << ") ---\n";
-    Graph dijkstraTree = Algorithms::dijkstra(g, source);
-    dijkstraTree.print_graph();
+    try {
+        Graph dijkstraTree = Algorithms::dijkstra(g, source);
+        dijkstraTree.print_graph();
+    } catch (const std::exception& e) {
+        std::cout << "Dijkstra Error: " << e.what() << std::endl;
+    }
 
     std::cout << "\n--- Prim ---\n";
     Graph primTree = Algorithms::prim(g);
@@ -32,6 +36,7 @@ void runAllAlgorithms(const Graph& g, const std::string& name, int source = 0) {
     Graph kruskalTree = Algorithms::kruskal(g);
     kruskalTree.print_graph();
 }
+
 
 int main() {
     // גרף קשיר
@@ -70,6 +75,14 @@ int main() {
     cyclicGraph.addEdge(2, 3);
     cyclicGraph.addEdge(3, 0); // סוגר מעגל
     runAllAlgorithms(cyclicGraph, "Cyclic Graph", 0);
+
+    // גרף עם משקלים שליליים
+    Graph negativeGraph(5);
+    negativeGraph.addEdge(0, 1, 2);
+    negativeGraph.addEdge(1, 2, -4); // משקל שלילי
+    negativeGraph.addEdge(2, 3, 1);
+    negativeGraph.addEdge(3, 4, 3);
+    runAllAlgorithms(negativeGraph, "Graph with Negative Weights", 0);
 
     return 0;
 }

@@ -335,7 +335,24 @@ TEST_CASE("Test collectEdges and sortEdgesByWeight") {
     CHECK(edges[2].v == 3);
     CHECK(edges[2].weight == 5);
 
-
     delete[] edges;
 }
+TEST_CASE("Prim on shared graph") {
+    Graph g(5);
+    g.addEdge(0, 1, 1);
+    g.addEdge(1, 2, 2);
+    g.addEdge(2, 0, 3);
+    g.addEdge(1, 3, 4);
+    g.addEdge(3, 4, -1);
+
+    Graph mst = Algorithms::prim(g);
+    CHECK(mst.getNumVertices() == 5);
+
+    CHECK(hasIncomingEdgeTo(mst, 1)); // 0 → 1
+    CHECK(hasIncomingEdgeTo(mst, 2)); // 1 → 2
+    CHECK(hasIncomingEdgeTo(mst, 3)); // 1 → 3
+    CHECK(hasIncomingEdgeTo(mst, 4)); // 3 → 4
+    CHECK(hasIncomingEdgeTo(mst, 0));
+}
+
 
