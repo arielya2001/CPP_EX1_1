@@ -1,13 +1,13 @@
 # Graph Algorithms in C++
 # Mail - ariel.yaacobi@msmail.ariel.ac.il
-## 🧠 Overview
+## Overview
 
 This project implements a graph structure and several classical graph algorithms in C++, without using STL containers (as required by the assignment).
 The project includes unit tests using the `doctest` framework, and supports memory leak checks using `valgrind`.
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 .
@@ -24,7 +24,7 @@ The project includes unit tests using the `doctest` framework, and supports memo
 
 ---
 
-## 🧱 Classes and Their Roles
+## Classes and Their Roles
 
 ### `Graph`
 - Uses adjacency list (`Neighbor*`) for storing undirected or directed weighted edges(using Struct)
@@ -54,7 +54,7 @@ Each algorithm throws `std::invalid_argument` when given an invalid input (e.g.,
 
 ---
 
-## 🧪 Unit Testing
+## Unit Testing
 
 Tests are located in `test.cpp` using [doctest](https://github.com/doctest/doctest).
 
@@ -72,7 +72,7 @@ Tests include:
 
 ---
 
-## 🧼 Memory Leak Detection
+## Memory Leak Detection
 
 Memory is manually managed (new/delete). Use `valgrind` to check for leaks.
 
@@ -85,7 +85,7 @@ Valgrind will run both the test executable and the demo (`graph_demo`) and print
 
 ---
 
-## 🚀 Running the Demo
+## Running the Demo
 
 The demo file `Main.cpp` shows usage of all algorithms on various example graphs.
 
@@ -97,7 +97,7 @@ make Main
 
 ---
 
-## 🧹 Clean Build Files
+## Clean Build Files
 
 To remove all compiled output files and object files:
 ```
@@ -106,7 +106,7 @@ make clean
 
 ---
 
-## 📌 Notes
+## Notes
 
 - STL containers were avoided intentionally, using custom data structures only.
 - Algorithms are designed with robustness in mind.
@@ -115,7 +115,7 @@ make clean
 
 ---
 
-## 📅 Author & Date
+## Author & Date
 
 - Developed by: Ariel Ya'acobi
 - Assignment: Systems programming 2 – Graph Algorithms (CPP_EX1_1)  
